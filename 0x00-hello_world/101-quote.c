@@ -9,7 +9,6 @@
  */
 int main(void)
 {
-	const char *msg = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	write(stderr, msg, strlen(msg));
+	write(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19", 59);
 	return (1);
 }

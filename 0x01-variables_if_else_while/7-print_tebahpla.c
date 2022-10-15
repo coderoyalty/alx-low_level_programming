@@ -10,7 +10,7 @@ int main(void)
 {
 	int first_char;
 
-	for (first_char = 122; first_char >= 97; first_char++)
+	for (first_char = 122; first_char >= 97; first_char--)
 	{
 		putchar(first_char);
 	}

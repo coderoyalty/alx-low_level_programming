@@ -7,4 +7,12 @@
  * Return: On success 1.
  */
 int _putchar(char c);
+
+
+/**
+ * print_alphabet - prints lowercase alphabets
+ *
+ * Return: nothing
+ */
+void print_alphabet(void);
 #endif

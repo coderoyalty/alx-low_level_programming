@@ -21,4 +21,6 @@ int print_last_digit(int n);
 void jack_bauer(void);
 
 int add(int, int);
+
+void print_to_98(int n)
 #endif

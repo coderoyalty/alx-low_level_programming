@@ -2,7 +2,7 @@
 
 /**
  * jack_bauer - hmmm
- * 
+ *
  * Return: nothing
  */
 

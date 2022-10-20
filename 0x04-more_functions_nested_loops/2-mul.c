@@ -1,5 +1,5 @@
 /**
- * _isupper - multiplies two number @a and @b
+ * mul - multiplies two number @a and @b
  * @a: first number
  * @b: second number
  * Return: 1 on Success otherwise 0

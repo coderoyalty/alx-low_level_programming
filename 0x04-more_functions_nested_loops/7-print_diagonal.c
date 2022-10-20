@@ -3,6 +3,7 @@
 /**
  * print_diagonal - prints diagonal on the screen
  * @n: length of diagonal
+ * Return: nothing
  */
 
 void print_diagonal(int n)

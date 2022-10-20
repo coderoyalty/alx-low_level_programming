@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * print_most_numbers - do something
+ * more_numbers - do something
  * Return: nothing
  */
-void print_most_numbers(void)
+void more_numbers(void)
 {
-	int i;
-	int counter;
+	int i, counter;
 
 	for (i = 0; i < 10; i++)
 	{

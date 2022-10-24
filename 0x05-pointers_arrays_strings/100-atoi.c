@@ -1,13 +1,12 @@
 #include "main.h"
-#include <math.h>
 
 /**
- * pow - hmm
+ * _pow - hmm
  * @v: v
  * @p: p
  * Return: int
  */
-int pow(int v, int p)
+int _pow(int v, int p)
 {
 	int val = v;
 
@@ -51,7 +50,7 @@ int _atoi(char *s)
 		if (!((c >= '0') && (c <= '9')))
 			return (-1);
 
-		val += (c - '0') * pow(10, len);
+		val += (c - '0') * _pow(10, len);
 		len -= 1;
 		i++;
 	}

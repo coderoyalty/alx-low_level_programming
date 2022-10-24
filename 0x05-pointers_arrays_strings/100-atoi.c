@@ -46,7 +46,7 @@ int _atoi(char *s)
 	{
 		c = *(s + i);
 
-		if ((c <= '0') && (c >= '9'))
+		if ((c < '0') && (c > '9'))
 			return (-1);
 
 		val += (c - '0') * _pow(10, len);

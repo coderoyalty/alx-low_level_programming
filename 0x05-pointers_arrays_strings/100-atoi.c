@@ -9,11 +9,10 @@
 int _pow(int v, int p)
 {
 	int val = 1;
-
-	while (p)
+	int i = 0;
+	for (; i < p; i++)
 	{
 		val *= v;
-		p--;
 	}
 	return (val);
 }

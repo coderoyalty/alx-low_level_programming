@@ -8,7 +8,7 @@
  */
 int _pow(int v, int p)
 {
-	int val = v;
+	int val = 1;
 
 	while (p)
 	{

@@ -19,6 +19,19 @@ int _pow(int v, int p)
 }
 
 /**
+ * _isnum - hmmm
+ * @ch: char
+ * Return: 0 on Success
+ */
+int _isnum(char ch)
+{
+	if ((ch >= '0') && (ch <= '9'))
+		return (0);
+	else
+		return (1);
+}
+
+/**
  * _atoi - converts @s to integer
  * @s: string
  * Return: int
@@ -47,8 +60,8 @@ int _atoi(char *s)
 	{
 		c = *(s + i);
 
-		if ((c < '0') && (c > '9'))
-			return (-1);
+		if (!isnum(c))
+			return (0);
 
 		val += (c - '0') * _pow(10, len);
 		len -= 1;

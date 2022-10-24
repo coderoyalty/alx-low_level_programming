@@ -33,7 +33,7 @@ int _atoi(char *s)
 		if (!((c >= '0') && (c <= '9')))
 			return (-1);
 
-		val += (c - '0') * pow(10, len);
+		val += (c - '0') * powl(10, len);
 		len -= 1;
 		i++;
 	}

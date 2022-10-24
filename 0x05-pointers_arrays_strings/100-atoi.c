@@ -10,6 +10,7 @@ int _pow(int v, int p)
 {
 	int val = 1;
 	int i = 0;
+
 	for (; i < p; i++)
 	{
 		val *= v;

@@ -60,7 +60,7 @@ int _atoi(char *s)
 	{
 		c = *(s + i);
 
-		if (!_isnum(c))
+		if (_isnum(c) == 1)
 			return (0);
 
 		val += (c - '0') * _pow(10, len);

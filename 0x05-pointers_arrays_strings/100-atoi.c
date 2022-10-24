@@ -2,6 +2,24 @@
 #include <math.h>
 
 /**
+ * pow - hmm
+ * @v: v
+ * @p: p
+ * Return: int
+ */
+int pow(int v, int p)
+{
+	int val = v;
+
+	while (p)
+	{
+		val *= v;
+		p--;
+	}
+	return (val);
+}
+
+/**
  * _atoi - converts @s to integer
  * @s: string
  * Return: int
@@ -33,7 +51,7 @@ int _atoi(char *s)
 		if (!((c >= '0') && (c <= '9')))
 			return (-1);
 
-		val += (c - '0') * powl(10, len);
+		val += (c - '0') * pow(10, len);
 		len -= 1;
 		i++;
 	}

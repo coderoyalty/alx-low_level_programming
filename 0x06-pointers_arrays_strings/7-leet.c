@@ -9,6 +9,7 @@ char *leet(char *str)
 {
 	char leet[] = {'4', '3', '0', '7', '1'};
 	char lower[] = {'a', 'e', 'o', 't', 'l'};
+	char upper[] = {'A', 'E', 'O', 'T', 'L'};
 	int i = 0, j = 0;
 	char ch;
 
@@ -17,7 +18,7 @@ char *leet(char *str)
 		for (i = 0; i < 5; i++)
 		{
 			ch = lower[i];
-			if (str[j] == ch || str[j] == ch - 32)
+			if (str[j] == ch || str[j] == upper[i])
 			{
 				str[j] = leet[i];
 			}

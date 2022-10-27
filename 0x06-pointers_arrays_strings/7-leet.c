@@ -20,7 +20,6 @@ char *leet(char *str)
 			if (str[j] == ch || str[j] == ch - 32)
 			{
 				str[j] = leet[i];
-				break;
 			}
 		}
 		j++;

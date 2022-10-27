@@ -7,7 +7,7 @@
  */
 char *cap_string(char *str)
 {
-	char sep[] = {',', ';', '.', '!', '?', '\"', '(', ')', '{', '}', '\n', '\t', ' '};
+char s[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n', '\t', ' '};
 	int i = 1, j = 0;
 	int val = 0; /*acts as a boolean*/
 	char ch;
@@ -23,9 +23,9 @@ char *cap_string(char *str)
 			ch = str[i - 1];
 			val = 0;
 			j = 0;
-			while (val == 0 && sep[j] != '0')
+			while (val == 0 && j < 13)
 			{
-				if (ch == sep[j])
+				if (ch == s[j])
 					val = 1;
 				j++;
 			}

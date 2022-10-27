@@ -26,7 +26,7 @@ char *cap_string(char *str)
 			while (val == 0 && sep[j] != '0')
 			{
 				if (ch == sep[j])
-					check = 1;
+					val = 1;
 				j++;
 			}
 			if (val == 1)

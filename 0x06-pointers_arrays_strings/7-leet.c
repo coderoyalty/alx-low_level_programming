@@ -9,21 +9,21 @@ char *leet(char *str)
 {
 	char leet[] = {'4', '3', '0', '7', '1'};
 	char lower[] = {'a', 'e', 'o', 't', 'l'};
-	int i = 0;
+	int i = 0, j = 0;
 	char ch;
 
-	while (*str)
+	while (str[j] != '\0')
 	{
 		for (; i < 5; i++)
 		{
 			ch = lower[i];
-			if (*str == ch || *str == ch - 32)
+			if (str[j] == ch || str[j] == ch - 32)
 			{
-				*str = leet[i];
+				str[j] = leet[i];
 				break;
 			}
 		}
-		str++;
+		j++;
 	}
 	return (str);
 }

@@ -13,9 +13,9 @@ unsigned int _strspn(char *s, char *accept)
 
 	for (i = 0; s[i]; i++)
 	{
-		for (i = 0; accept[i]; i++)
+		for (j = 0; accept[j]; j++)
 		{
-			if (accept[i] == s[i])
+			if (accept[j] == s[i])
 			{
 				bytes++;
 				break;

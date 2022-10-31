@@ -21,7 +21,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 			else
 			{
-				needle = 0;
+				checker = 0;
 			}
 		}
 		if (checker == 1)

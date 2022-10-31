@@ -1,8 +1,9 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_diagsums -  prints sums
- * @a: pointer of integers
+ * @a: pointer of int
  * @size: size of @a
  */
 void print_diagsums(int *a, int size)
@@ -11,8 +12,8 @@ void print_diagsums(int *a, int size)
 
 	for (i = 0; i < size; i++)
 	{
-		sum1 += a[size * i + i};
-		sum2 += a[size * i + size - 1 - i];
+		sum1 += *(a + (size * i + i));
+		sum2 += *(a + (size * i + size - 1 - i));
 	}
 	printf("%d, ", sum1);
 	printf("%d\n", sum2);

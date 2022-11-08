@@ -31,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 
 	for (i = 0; i < len2; i++)
 		mem[len1 + i] = s2[i];
-	mem[total] = '0';
+	mem[total] = '\0';
 
 	return (mem);
 }

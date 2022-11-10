@@ -37,10 +37,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 	
-	if (n >= len2)
-		n = len2;
-	
-	while (s2 && j < n)
+	while (n < len2 && i < (len1 + n))
+	{
+		mem[i++] = s2[j++];
+	}
+
+	while (n >= len2 && i < (len1 + len2))
 	{
 		mem[i++] = s2[j++];
 	}

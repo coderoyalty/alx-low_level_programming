@@ -13,13 +13,16 @@ int *array_range(int min, int max)
 
 	if (min > max)
 		return (NULL);
-	mem = (int *)malloc(sizeof(int) * (max - min) + 1);
+	mem = (int *)malloc(sizeof(int) * ((max - min) + 1));
 
 	if (!mem)
 		return (NULL);
 
 	for (i = min; i <= max; i++)
-		mem[j++] = i;
+	{
+		mem[j] = i;
+		j++;
+	}
 	return (mem);
 
 }

@@ -9,7 +9,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *mem;
+	char *mem;
 	unsigned int i;
 
 	if (nmemb == 0 || nmemb == 0) 

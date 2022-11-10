@@ -29,12 +29,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1 && i < len1)
 		mem[i] = s1[i++];
 	i = 0;
-
 	if (n > len2)
 		n = len2;
 	while (s2 && i < n)
 		mem[len1 + i] = s2[i++];
-	mem[total] = '\0';
+	mem[total - 1] = '\0';
 
 	return (mem);
 }

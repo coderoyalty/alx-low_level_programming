@@ -10,20 +10,17 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *mem;
-	unsigned int len;
 	unsigned int i;
 
-	len = nmemb * size;
-
-	if (len == 0)
+	if (nmemb == 0 || nmemb == 0) 
 		return (NULL);
 
-	mem = malloc(len);
+	mem = malloc(nmemb * size);
 
 	if (mem == NULL)
 		return (NULL);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i < (nmemb * size); i++)
 		mem[i] = 0;
 
 	return (mem);

@@ -7,14 +7,11 @@
  * @n: something
  * Return: char pointer
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *mem;
-	unsigned int len1 = 0;
-	unsigned int len2 = 0;
-	unsigned int total = 0;
-	unsigned int i = 0;
-	unsigned int j = 0;
+	unsigned int len1 = 0, len2 = 0, total = 0, i = 0, j = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -30,9 +27,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		total = len1 + n + 1;
 	else
 		total = len1 + len2 + 1;
-	
+
 	mem = (char *)malloc(total * sizeof(char));
-	
 	if (!mem)
 		return (NULL);
 
@@ -41,17 +37,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		mem[i] = s1[i];
 		i++;
 	}
-	
-	while (n < len2 && i < (len1 + n))
-	{
+	if (n > len2)
+		n = len2;
+	while (j < n)
 		mem[i++] = s2[j++];
-	}
-
-	while (n >= len2 && i < (len1 + len2))
-	{
-		mem[i++] = s2[j++];
-	}
-
 	mem[i] = '\0';
 
 	return (mem);

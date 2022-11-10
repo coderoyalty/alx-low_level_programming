@@ -1,5 +1,13 @@
 #include "main.h"
 
+
+/**
+ * _calloc - allocates memory
+ * @nmemb: hmmm
+ * @size: hmmm
+ * Return: void pointer
+ */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *mem;
@@ -8,12 +16,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (len == 0)
 		return (NULL);
+	
 	mem = malloc(len);
-	if (!mem)
+
+	if (mem == NULL) 
 		return (NULL);
 
-	for (; i < len; i++)
-		mem[i] = 0;
+	for (i = 0; i < len; i++)
+		mem[i] = '\0';
 
 	return (mem);
 }

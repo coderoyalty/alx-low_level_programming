@@ -1,7 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
 
-/* make a strlen function */
 
 /**
  * _strlen - finds the length of @str
@@ -19,9 +18,6 @@ int _strlen(char *str)
 		len++;
 	return (len);
 }
-
-/* make a function to copy str*/
-
 /**
  * _strcpy - copies @src into @dest
  * @dest: destination
@@ -32,6 +28,7 @@ int _strlen(char *str)
 void _strcpy(char *dest, char *src)
 {
 	int len, i;
+	len = 0;
 
 	while (src[len] != '\0')
 		len++;
@@ -68,12 +65,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->owner = malloc(sizeof(char) * (len2 + 1));
 	if (dog->owner == NULL)
 	{
-		free(dog);
 		free(dog->name);
+		free(dog);
 		return (NULL);
 	}
-	dog->name = _strcpy(dog->name, name);
-	dog->owner = _strcpy(dog->owner, owner);
+	_strcpy(dog->name, name);
+	_strcpy(dog->owner, owner);
 	dog->age = age;
 	return (dog);
 

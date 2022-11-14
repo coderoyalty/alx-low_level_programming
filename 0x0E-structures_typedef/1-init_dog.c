@@ -1,6 +1,6 @@
 #include "dog.h"
 
-#define NULL (void*)0
+#define NULL (void *)0
 
 /**
  * init_dog - initialize struct dog
@@ -12,7 +12,7 @@
  * Return: void
  */
 
-void init_dog(struct dog* d, char *name, float age, char *owner)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d == NULL)
 		return;

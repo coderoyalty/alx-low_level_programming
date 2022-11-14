@@ -26,10 +26,10 @@ int _strlen(char *str)
  * _strcpy - copies @src into @dest
  * @dest: destination
  * @src: source
- * Return: char pointer
+ * Return: void
  */
 
-char *_strcpy(char *dest, char *src)
+void _strcpy(char *dest, char *src)
 {
 	int len, i;
 
@@ -40,7 +40,6 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 	}
 	dest[i] = '\0';
-	return (dest);
 }
 
 /**
@@ -53,11 +52,11 @@ char *_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *rv = NULL;
+	dog_t *dog;
 	int len1 = _strlen(name);
 	int len2 = _strlen(owner);
 
-	rv = (dog_t *)malloc(sizeof(dog_t));
+	dog = (dog_t *)malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
 	dog->name = (char *)malloc(sizeof(char) * (len1 + 1));

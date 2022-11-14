@@ -1,8 +1,6 @@
 #ifndef DOG_H
 #define DOG_H
 
-#define NULL (void *)0
-
 /**
  * struct dog - structure define dog
  * @name: name of the dog

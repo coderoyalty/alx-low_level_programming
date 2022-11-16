@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 	{
 		if (i == bytes - 1)
 		{
-			printf("%02hx\n", code[i]);
+			printf("%02hhx\n", code[i]);
 			break;
 		}
-		printf("%02hx ", code[i]);
+		printf("%02hhx ", code[i]);
 	}
 
 	return (0);

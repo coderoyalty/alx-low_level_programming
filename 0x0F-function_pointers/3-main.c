@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (1);
+		return (98);
 	}
 
 	rhs = atoi(argv[1]);
@@ -26,14 +26,14 @@ int main(int argc, char **argv)
 	if (!op_func)
 	{
 		printf("Error\n");
-		return (1);
+		return (99);
 	}
 
 	/* remember it impossible to divide by 0 */
 	if ((operand == '/' || operand == '%') && lhs == 0)
 	{
 		printf("Error\n");
-		return (1);
+		return (100);
 	}
 
 	printf("%d\n", op_func(rhs, lhs));

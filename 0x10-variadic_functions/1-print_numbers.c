@@ -8,13 +8,12 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	va_args args;
+	va_list args;
 	unsigned int i;
 
+	va_start(args, n);
 	for (i = 0; i < n; i++)
 	{
-		/* i = 0; specifies the beginning, hence don't */
-		/* print the separator */
 		if (!separator || (separator && i == 0))
 		{
 			printf("%d", va_arg(args, int));

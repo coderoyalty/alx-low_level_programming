@@ -3,7 +3,7 @@
 /**
  * list_len - returns list of element in list
  * @h: head of the list
- * return: length of element in the list
+ * Return: length of element in the list
  */
 size_t list_len(const list_t *h)
 {

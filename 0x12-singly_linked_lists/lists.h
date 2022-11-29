@@ -21,5 +21,7 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
-size_t print_list(const list_t* h);
+size_t print_list(const list_t *h);
+
+void _putchar(char ch);
 #endif

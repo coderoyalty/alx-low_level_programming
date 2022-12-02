@@ -11,7 +11,7 @@ int valid_binary_str(const char *str)
 		return (1);
 	while (*str)
 	{
-		if ((*str != '1' || *str != '0'))
+		if ((*str != '1' && *str != '0'))
 			return (1);
 		str++;
 	}

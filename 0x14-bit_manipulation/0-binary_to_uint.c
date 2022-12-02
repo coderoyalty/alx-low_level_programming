@@ -2,21 +2,21 @@
 /**
  * valid_binary_str - checks if a string is binary
  * @str: string passed
- * Return: 0 on success 1 on failure
+ * Return: 1 on success 0 on failure
  */
 
 int valid_binary_str(const char *str)
 {
 	if (str == NULL)
-		return (1);
+		return (0);
 	while (*str)
 	{
-		if (*str != '1' && *str != '0')
-			return (1);
+		if (*str != '1' || *str != '0')
+			return (0);
 		str++;
 	}
 
-	return (0);
+	return (1);
 }
 
 /**
@@ -30,7 +30,7 @@ unsigned int binary_to_uint(const char *b)
 	int base = 1;
 	int str_len = 0;
 
-	if (!valid_binary_str(b))
+	if (valid_binary_str(b))
 		return (0);
 
 	while (b[str_len] != '\0')
@@ -38,7 +38,7 @@ unsigned int binary_to_uint(const char *b)
 
 	while (str_len)
 	{
-		value += (b[str_len - 1] - '0') * base;
+		value += ((b[str_len - 1] - '0') * base);
 		base *= 2;
 		str_len--;
 	}

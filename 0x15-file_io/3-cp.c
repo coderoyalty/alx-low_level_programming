@@ -1,6 +1,11 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define BUFFER_SIZE 1024
+
+void close_file(int fd);
+char *alloc_buffer(char *filename);
 
 /**
  * close_file - close files

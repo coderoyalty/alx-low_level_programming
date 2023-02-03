@@ -42,7 +42,7 @@ void free_hashnode(hash_node_t *node)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	ul_int hash_index;
+	ul_int hash_index = 0;
 	hash_node_t *new_node = NULL;
 	hash_node_t *current = NULL;
 
@@ -54,7 +54,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node = init_hashnode(key, value);
 	if (!new_node)
 		return (0);
-	if (ht->array[hash_index] == NULL)
+	current = ht->array[hash_index];
+	if (current == NULL)
 	{
 		if (!new_node)
 			return (0);
@@ -62,7 +63,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
-	current = ht->array[hash_index];
 	/* if key exists, replace the value*/
 	while (current)
 	{

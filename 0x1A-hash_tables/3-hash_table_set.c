@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!new_node)
 		return (0);
-	new_node->key = (char *)key;
+	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 	new_node->next = NULL;
 	if (ht->array[hash_index] == NULL)
@@ -30,10 +30,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	current = ht->array[hash_index];
-
-	while (current && current->next != NULL)
+	/* if key exists, replace the value*/
+	while (current)
+	{
+		if (strcmp(current->key, key) == 0)
+		{
+			free(current->value);
+			current->value = strdup(value);
+			return (1);
+		}
 		current = current->next;
-	current->next = new_node;
-
+	}
+	/* if key does not exist, add it the front of the list*/
+	new_node->next = ht->array[hash_index];
+	ht->array[hash_index] = new_node;
 	return (1);
 }

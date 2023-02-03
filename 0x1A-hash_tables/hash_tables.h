@@ -42,4 +42,5 @@ ul_int hash_djb2(const unsigned char *str);
 ul_int key_index(const unsigned char *key, ul_int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
+void hash_table_print(const hash_table_t *ht);
 #endif

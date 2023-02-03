@@ -31,9 +31,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	current = ht->array[hash_index];
 
-	while (current)
+	while (current && current->next != NULL)
 		current = current->next;
-	current = new_node;
+	current->next = new_node;
 
 	return (1);
 }

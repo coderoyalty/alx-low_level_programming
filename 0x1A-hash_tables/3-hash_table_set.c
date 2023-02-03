@@ -1,6 +1,38 @@
 #include "hash_tables.h"
 
 /**
+ * init_hashnode - method to create an hashnode
+ * @key: node key
+ * @value: node value
+ * Return: NULL or hashnode
+ */
+hash_node_t *init_hashnode(const char *key, const char *value)
+{
+	hash_node_t *hashnode;
+	hashnode = malloc(sizeof(hash_node_t));
+	if (!hashnode)
+		return (NULL);
+	hashnode->key = strdup(key);
+	hashnode->value = strdup(value);
+	hashnode->next = NULL;
+
+	return (hashnode);
+}
+
+/**
+ * free_hashnode - method to delete @node
+ * @node: node to delete
+ */
+void free_hashnode(hash_node_t *node)
+{
+	if (!node)
+		return;
+	free(node->key);
+	free(node->value);
+	free(node);
+}
+
+/**
  * hash_table_set - adds an element to the hash table.
  * @ht: the hash table to add or update
  * @key: the key, It can not be empty
@@ -16,15 +48,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if ((key == NULL) || strlen(key) == 0)
 		return (0);
 	hash_index = key_index((unsigned char *)key, ht->size);
-	new_node = malloc(sizeof(hash_node_t));
-
+	
+	new_node = init_hashnode(key, value);
 	if (!new_node)
 		return (0);
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	new_node->next = NULL;
 	if (ht->array[hash_index] == NULL)
 	{
+		if (!new_node)
+			return (0);
 		ht->array[hash_index] = new_node;
 		return (1);
 	}
@@ -37,6 +68,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(current->value);
 			current->value = strdup(value);
+			free_hashnode(new_node);
 			return (1);
 		}
 		current = current->next;

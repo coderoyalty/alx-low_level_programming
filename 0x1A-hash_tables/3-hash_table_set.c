@@ -9,6 +9,7 @@
 hash_node_t *init_hashnode(const char *key, const char *value)
 {
 	hash_node_t *hashnode;
+
 	hashnode = malloc(sizeof(hash_node_t));
 	if (!hashnode)
 		return (NULL);
@@ -48,7 +49,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if ((key == NULL) || strlen(key) == 0)
 		return (0);
 	hash_index = key_index((unsigned char *)key, ht->size);
-	
 	new_node = init_hashnode(key, value);
 	if (!new_node)
 		return (0);

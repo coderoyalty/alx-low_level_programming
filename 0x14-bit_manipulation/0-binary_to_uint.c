@@ -1,3 +1,12 @@
+#include "main.h"
+
+/**
+ * power - function to calculate the exponential of a base
+ * @base: base.
+ * @exp: exponent.
+ * Return: base ^ exponent.
+ */
+
 unsigned int power(unsigned int base, unsigned int exp)
 {
 	if (exp == 0)
@@ -5,6 +14,12 @@ unsigned int power(unsigned int base, unsigned int exp)
 	return (base * power(base, exp - 1));
 }
 
+/**
+ * binary_to_uint - function to convert from binary to
+ * decimal.
+ * @b: binary buffer.
+ * Return: return decimal value of binary buffer.
+ */
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int decimal_val  = 0;
@@ -14,7 +29,9 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == (void *)0)
 		return (0);
-	// length of b
+	/**
+	 * length of the binary buffer.
+	 */
 	while (b[i] != '\0')
 	{
 		if (b[i] == '0' || b[i] == '1')
@@ -24,7 +41,8 @@ unsigned int binary_to_uint(const char *b)
 	}
 	len = i;
 	i = 0;
-	/** convert from binary to decimal
+	/**
+	 * convert from binary to decimal
 	 * using this: (2 ^ (n - 1) * b[i])
 	 */
 	for (i = 0; i < len; i++)
